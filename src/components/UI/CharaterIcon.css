@@ -1,0 +1,134 @@
+/* キャラクターアイコン */
+.character-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 8px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.character-icon.clickable {
+  cursor: pointer;
+}
+
+.character-icon.clickable:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  border-color: var(--element-color);
+}
+
+.character-icon.selected {
+  border-color: var(--element-color);
+  box-shadow: 0 0 20px var(--element-color);
+}
+
+/* サイズバリエーション */
+.character-icon.small {
+  width: 60px;
+  min-height: 80px;
+}
+
+.character-icon.medium {
+  width: 80px;
+  min-height: 110px;
+}
+
+.character-icon.large {
+  width: 100px;
+  min-height: 140px;
+}
+
+/* アイコン画像 */
+.icon-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.icon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* フォールバック（文字アイコン） */
+.fallback-icon {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--element-color), rgba(255, 255, 255, 0.1));
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 属性インジケーター */
+.element-indicator {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  background: var(--element-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+/* レアリティ表示 */
+.rarity-display {
+  margin-bottom: 2px;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 0.8rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+/* キャラクター名 */
+.character-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 小さなサイズでは名前を非表示 */
+.character-icon.small .character-name {
+  display: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .character-icon.medium {
+    width: 70px;
+    min-height: 100px;
+  }
+  
+  .character-icon.large {
+    width: 80px;
+    min-height: 110px;
+  }
+}
