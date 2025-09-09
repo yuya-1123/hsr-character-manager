@@ -1,4 +1,111 @@
-/* ステータス表示 */
+/* コンテナ全体 */
+.stats-display-container {
+  width: 100%;
+}
+
+/* タブ切り替え */
+.stats-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-tab {
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #aaa;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.stats-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.stats-tab.active {
+  color: #ffd700;
+  border-bottom-color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* 基本ステータスセクション */
+.base-stats-section {
+  animation: fadeIn 0.3s ease;
+}
+
+.base-stats-info {
+  margin-bottom: 20px;
+}
+
+.base-stats-note {
+  color: #aaa;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.base-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.base-stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #ffd700;
+  transition: all 0.3s ease;
+}
+
+.base-stat-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.base-stat-label {
+  font-weight: 600;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.base-stat-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* 推奨ステータスセクション */
+.recommended-stats-section {
+  animation: fadeIn 0.3s ease;
+}
+
+.stats-info {
+  margin-bottom: 20px;
+}
+
+.stats-note {
+  color: #aaa;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ステータス表示（既存のスタイルを維持） */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -117,9 +224,34 @@
   line-height: 1.4;
 }
 
+/* アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
   .stats-grid { 
     grid-template-columns: 1fr; 
+  }
+  
+  .base-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-tabs {
+    justify-content: center;
+  }
+  
+  .stats-tab {
+    padding: 10px 20px;
+    font-size: 0.95rem;
   }
 }

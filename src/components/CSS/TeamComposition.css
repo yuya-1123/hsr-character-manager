@@ -93,3 +93,34 @@
   border-left: 3px solid #ffd700;
   line-height: 1.4;
 }
+
+/* シミュレーターボタン */
+.simulator-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 20px 0;
+}
+
+.simulator-button {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.simulator-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(135deg, #ff8e53, #ff6b6b);
+}
+
+.simulator-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import DamageSimulator from './DamageSimulator';
 import './CSS/TeamComposition.css';
 
 const TeamComposition = ({ character }) => {
+  const [showSimulator, setShowSimulator] = useState(false);
+
   return (
     <div>
       {/* コア編成 */}
@@ -46,6 +49,21 @@ const TeamComposition = ({ character }) => {
           </ul>
         </div>
       </div>
+
+      {/* シミュレーショントグル */}
+      <div className="simulator-toggle">
+        <button 
+          className="simulator-button"
+          onClick={() => setShowSimulator(!showSimulator)}
+        >
+          {showSimulator ? '🔽 シミュレーションを閉じる' : '⚔️ ダメージシミュレーション'}
+        </button>
+      </div>
+
+      {/* ダメージシミュレーター */}
+      {showSimulator && (
+        <DamageSimulator character={character} />
+      )}
     </div>
   );
 };

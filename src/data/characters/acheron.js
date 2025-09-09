@@ -10,13 +10,13 @@ export const acheron = {
   voiceActor: '沢城みゆき',
   icon: null, // 今後画像パスを設定
 
-  // ===== 新追加：基礎ステータス（レベル80時）※要確認 =====
+  // ===== 基礎ステータス（レベル80時）※HoYoWiki確認済み =====
   baseStats: {
     level80: {
-      hp: 1125, // 推定値、要HoYoWiki確認
-      atk: 698,  // 推定値、要HoYoWiki確認
-      def: 437,  // 推定値、要HoYoWiki確認
-      speed: 101 // 推定値、要HoYoWiki確認
+      hp: 1125,  // 確定値
+      atk: 698,  // 確定値
+      def: 436,  // 確定値（437→436に修正）
+      speed: 101 // 確定値
     }
   },
 

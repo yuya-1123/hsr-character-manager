@@ -1,0 +1,240 @@
+/* CharacterIcon.css */
+
+/* 基本コンテナ */
+.character-icon {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* サイズバリエーション */
+.character-icon.icon-small {
+  width: 60px;
+  height: 60px;
+}
+
+.character-icon.icon-medium {
+  width: 80px;
+  height: 80px;
+}
+
+.character-icon.icon-large {
+  width: 120px;
+  height: 120px;
+}
+
+/* クリック可能な場合 */
+.character-icon.clickable {
+  cursor: pointer;
+}
+
+.character-icon.clickable:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* アイコン画像 */
+.character-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* フォールバック表示 */
+.character-icon-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.character-initials {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.icon-small .character-initials {
+  font-size: 1rem;
+}
+
+.icon-large .character-initials {
+  font-size: 2rem;
+}
+
+/* 属性アイコン */
+.character-element {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.icon-small .character-element {
+  width: 18px;
+  height: 18px;
+  top: 2px;
+  left: 2px;
+}
+
+.icon-large .character-element {
+  width: 32px;
+  height: 32px;
+  top: 6px;
+  left: 6px;
+}
+
+.element-text {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.icon-small .element-text {
+  font-size: 0.6rem;
+}
+
+.icon-large .element-text {
+  font-size: 1rem;
+}
+
+/* 運命の道アイコン */
+.character-path {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.icon-small .character-path {
+  width: 18px;
+  height: 18px;
+  top: 2px;
+  right: 2px;
+}
+
+.icon-large .character-path {
+  width: 32px;
+  height: 32px;
+  top: 6px;
+  right: 6px;
+}
+
+.path-symbol {
+  font-size: 0.75rem;
+}
+
+.icon-small .path-symbol {
+  font-size: 0.6rem;
+}
+
+.icon-large .path-symbol {
+  font-size: 1rem;
+}
+
+/* レアリティ表示 */
+.character-rarity {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  color: #FFD700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.icon-small .character-rarity {
+  font-size: 0.5rem;
+  padding: 1px 4px;
+  bottom: 2px;
+}
+
+.icon-large .character-rarity {
+  font-size: 0.9rem;
+  padding: 3px 8px;
+  bottom: 6px;
+}
+
+/* ツールチップ */
+.character-name-tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.character-icon:hover .character-name-tooltip {
+  opacity: 1;
+}
+
+/* アニメーション */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.character-icon.loading {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .character-icon.icon-medium {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .character-name-tooltip {
+    font-size: 0.75rem;
+  }
+}

@@ -8,7 +8,7 @@ export const firefly = {
   path: '壊滅',
   rarity: 5,
   voiceActor: '楠木ともり（ホタル）/ 笠間淳（サム）',
-  icon: null, // 今後画像パスを設定
+  icon: '/images/characters/firefly.png', // ホタルのアイコン画像
 
   // ===== 新追加：基礎ステータス（レベル80時） =====
   baseStats: {

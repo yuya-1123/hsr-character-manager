@@ -1,0 +1,273 @@
+/* RelicEquipment.css */
+
+.relic-equipment {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.equipment-title {
+  color: #ffd700;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* タブ切り替え */
+.equipment-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.equipment-tab {
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #aaa;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.equipment-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.equipment-tab.active {
+  color: #ffd700;
+  border-bottom-color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* セット効果セクション */
+.sets-section {
+  animation: fadeIn 0.3s ease;
+}
+
+.relic-set-section,
+.ornament-section {
+  margin-bottom: 30px;
+}
+
+.relic-set-section h4,
+.ornament-section h4 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.recommended-note {
+  background: rgba(255, 215, 0, 0.1);
+  border-left: 3px solid #ffd700;
+  padding: 8px 12px;
+  margin-bottom: 15px;
+  color: #ffd700;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+
+.relic-options,
+.ornament-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.relic-option,
+.ornament-option {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.relic-option:hover,
+.ornament-option:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.relic-option.selected,
+.ornament-option.selected {
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.15);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.relic-name,
+.ornament-name {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.relic-effect,
+.ornament-effect {
+  font-size: 0.8rem;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+/* メインステータスセクション */
+.mainstats-section {
+  animation: fadeIn 0.3s ease;
+}
+
+.recommended-mainstats {
+  background: rgba(255, 215, 0, 0.1);
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.recommended-mainstats h4 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.recommended-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.stat-slot {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.slot-name {
+  color: #ccc;
+  font-weight: 600;
+}
+
+.slot-value {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.mainstat-slot {
+  margin-bottom: 25px;
+}
+
+.mainstat-slot h5 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  padding-left: 5px;
+  border-left: 3px solid #ffd700;
+}
+
+.mainstat-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.mainstat-option {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  text-align: center;
+}
+
+.mainstat-option:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.05);
+}
+
+.mainstat-option.selected {
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.15);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.mainstat-option .stat-name {
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+}
+
+.mainstat-option .stat-value {
+  font-size: 0.75rem;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* 装備サマリー */
+.equipment-summary {
+  margin-top: 30px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.equipment-summary h4 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.summary-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.summary-item {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .relic-options,
+  .ornament-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .mainstat-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .recommended-list {
+    grid-template-columns: 1fr;
+  }
+}

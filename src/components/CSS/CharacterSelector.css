@@ -1,66 +1,135 @@
 /* キャラクター選択 */
 .character-selector {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
   margin-bottom: 30px;
-  flex-wrap: wrap;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
 }
 
 .character-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 20px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid transparent;
-  min-width: 200px;
-  text-align: center;
+  position: relative;
 }
 
 .character-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .character-card.active {
   border-color: #ffd700;
-  background: rgba(255, 215, 0, 0.1);
+  background: rgba(255, 215, 0, 0.15);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
+.character-card.active::before {
+  content: '✓';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #ffd700;
+  color: #000;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* キャラクター別の背景グラデーション */
 .character-card.firefly {
+  background: linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(255, 136, 68, 0.1));
+}
+
+.character-card.firefly:hover {
   background: linear-gradient(135deg, rgba(255, 68, 68, 0.2), rgba(255, 136, 68, 0.2));
 }
 
 .character-card.castorice {
+  background: linear-gradient(135deg, rgba(136, 68, 255, 0.1), rgba(68, 136, 255, 0.1));
+}
+
+.character-card.castorice:hover {
   background: linear-gradient(135deg, rgba(136, 68, 255, 0.2), rgba(68, 136, 255, 0.2));
 }
 
+.character-card.acheron {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+.character-card.acheron:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(139, 92, 246, 0.2));
+}
+
+/* キャラクター情報 */
+.character-info {
+  text-align: center;
+  width: 100%;
+}
+
 .character-name {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  color: #fff;
 }
 
 .character-type {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: #ffd700;
-  margin-bottom: 5px;
+  line-height: 1.2;
+  opacity: 0.9;
 }
 
-.character-element {
-  font-size: 0.8rem;
-  color: #ccc;
+/* CharacterIconコンポーネントのクリックイベント無効化（親のクリックを使用） */
+.character-card .character-icon {
+  pointer-events: none;
 }
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
-  .character-selector { 
-    gap: 10px; 
+  .character-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 15px;
   }
   
-  .character-card { 
-    min-width: 150px; 
-    padding: 15px; 
+  .character-card {
+    padding: 10px;
+  }
+  
+  .character-name {
+    font-size: 0.95rem;
+  }
+  
+  .character-type {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
   }
 }

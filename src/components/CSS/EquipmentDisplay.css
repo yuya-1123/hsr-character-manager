@@ -1,3 +1,51 @@
+/* 装備コンテナ */
+.equipment-display-container {
+  width: 100%;
+}
+
+/* タブ切り替え */
+.equipment-display-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.equipment-display-tab {
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #aaa;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.equipment-display-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.equipment-display-tab.active {
+  color: #ffd700;
+  border-bottom-color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* 推奨装備セクション */
+.recommended-equipment-section {
+  animation: fadeIn 0.3s ease;
+}
+
+/* カスタム装備セクション */
+.custom-equipment-section {
+  animation: fadeIn 0.3s ease;
+}
+
 /* 装備セクション */
 .equipment-section {
   margin-bottom: 30px;
@@ -58,4 +106,75 @@
   color: #8844ff !important;
   margin-bottom: 15px;
   font-size: 1.2rem;
+}
+
+.mechanic-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border-left: 3px solid #8844ff;
+}
+
+.mechanic-name {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.mechanic-description {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.mechanic-effects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.effect-tag {
+  background: rgba(136, 68, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #c7a3ff;
+  border: 1px solid rgba(136, 68, 255, 0.4);
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .equipment-display-tabs {
+    justify-content: center;
+  }
+  
+  .equipment-display-tab {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .mechanic-effects {
+    flex-direction: column;
+  }
+  
+  .effect-tag {
+    display: block;
+    text-align: center;
+  }
 }

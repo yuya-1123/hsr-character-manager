@@ -1,0 +1,161 @@
+.main-menu {
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-right: 2px solid #3a4a6b;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu-header {
+  padding: 20px;
+  border-bottom: 1px solid #3a4a6b;
+  text-align: center;
+}
+
+.menu-header h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0 0 8px 0;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-subtitle {
+  color: #b8c5d6;
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.menu-nav {
+  flex: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  color: #b8c5d6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.menu-item:hover:not(.disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.menu-item.active {
+  background: linear-gradient(90deg, rgba(74, 144, 226, 0.3) 0%, rgba(74, 144, 226, 0.1) 100%);
+  color: #ffffff;
+  border-right: 3px solid #4a90e2;
+}
+
+.menu-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
+}
+
+.menu-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.menu-item.disabled:hover {
+  transform: none;
+  background: transparent;
+  color: #b8c5d6;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  margin-right: 16px;
+  min-width: 32px;
+  text-align: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.menu-content {
+  flex: 1;
+}
+
+.menu-label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.menu-description {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  line-height: 1.3;
+}
+
+.menu-item.active .menu-description {
+  opacity: 0.9;
+}
+
+/* スクロールバーのスタイリング */
+.menu-nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+.menu-nav::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.menu-nav::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .main-menu {
+    width: 240px;
+  }
+  
+  .menu-item {
+    padding: 14px 16px;
+  }
+  
+  .menu-icon {
+    font-size: 1.3rem;
+    margin-right: 12px;
+    min-width: 28px;
+  }
+  
+  .menu-label {
+    font-size: 0.9rem;
+  }
+  
+  .menu-description {
+    font-size: 0.75rem;
+  }
+}
