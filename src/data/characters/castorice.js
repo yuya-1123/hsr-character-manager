@@ -153,7 +153,7 @@ export const castorice = {
       abilities: ['breath_attack', 'bound_attack'],
       lifespan: 3 // ターン数
     },
-    moonCocoon: {
+  moonCocoon: {
       name: '月の繭',
       description: '所持しているだけで味方の戦闘不能を1回防ぐ',
       scope: 'global', // 編成に入っていなくても有効

@@ -1,0 +1,389 @@
+.xinlei-simulator {
+  padding: 20px;
+  background: linear-gradient(135deg, #0a0e1a 0%, #1a1436 100%);
+  border-radius: 16px;
+  color: #ffffff;
+  min-height: 80vh;
+}
+
+.simulator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+}
+
+.simulator-header h2 {
+  color: #8a2be2;
+  font-size: 1.8rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(138, 43, 226, 0.5);
+}
+
+.debug-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.debug-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.simulator-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.control-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-setup {
+  margin-bottom: 25px;
+}
+
+.team-setup h3 {
+  color: #4a90e2;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.team-setup button {
+  margin-right: 10px;
+  margin-bottom: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #357abd 0%, #2968a3 100%);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #1e7e34 0%, #155724 100%);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc3545 0%, #bd2130 100%);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #bd2130 0%, #a71e2a 100%);
+  transform: translateY(-2px);
+}
+
+.action-controls h3 {
+  color: #f39c12;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.damage-controls {
+  margin-bottom: 20px;
+}
+
+.damage-controls h4 {
+  color: #e74c3c;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.character-damage-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 8px;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 6px;
+}
+
+.character-damage-control span {
+  min-width: 100px;
+  font-weight: 500;
+}
+
+.character-damage-control button {
+  padding: 4px 8px;
+  background: rgba(231, 76, 60, 0.8);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.character-damage-control button:hover {
+  background: rgba(231, 76, 60, 1);
+}
+
+.ultimate-controls h4 {
+  color: #9b59b6;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.btn-ultimate {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+}
+
+.btn-ultimate:hover:not(:disabled) {
+  background: linear-gradient(135deg, #8e44ad 0%, #7d3c98 100%);
+  transform: translateY(-2px);
+}
+
+.btn-ultimate:disabled {
+  background: rgba(155, 89, 182, 0.3);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.xinlei-gauge {
+  margin-bottom: 25px;
+}
+
+.xinlei-gauge h3 {
+  color: #8a2be2;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.gauge-container {
+  position: relative;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid rgba(138, 43, 226, 0.3);
+}
+
+.gauge-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8a2be2 0%, #da70d6 100%);
+  transition: width 0.5s ease;
+  border-radius: 13px;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+}
+
+.gauge-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  font-size: 0.9rem;
+}
+
+.xinlei-mode {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: rgba(138, 43, 226, 0.2);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.team-status, .spirits-status {
+  margin-bottom: 20px;
+}
+
+.team-status h3, .spirits-status h3 {
+  color: #2ecc71;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.character-status, .spirit-status {
+  background: rgba(46, 204, 113, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 3px solid #2ecc71;
+}
+
+.char-name, .spirit-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #2ecc71;
+}
+
+.char-hp, .char-ultimate, .spirit-hp {
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+  opacity: 0.9;
+}
+
+.action-log {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-log h3 {
+  color: #34495e;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.log-container {
+  max-height: 300px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.log-entry {
+  display: flex;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.log-entry:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.log-time {
+  color: #95a5a6;
+  min-width: 60px;
+  font-family: monospace;
+}
+
+.log-message {
+  flex: 1;
+}
+
+.log-system {
+  background: rgba(52, 73, 94, 0.3);
+  border-left: 3px solid #34495e;
+}
+
+.log-damage {
+  background: rgba(231, 76, 60, 0.3);
+  border-left: 3px solid #e74c3c;
+}
+
+.log-xinlei {
+  background: rgba(138, 43, 226, 0.3);
+  border-left: 3px solid #8a2be2;
+}
+
+.log-summon {
+  background: rgba(46, 204, 113, 0.3);
+  border-left: 3px solid #2ecc71;
+}
+
+.log-ultimate {
+  background: rgba(155, 89, 182, 0.3);
+  border-left: 3px solid #9b59b6;
+}
+
+.log-error {
+  background: rgba(231, 76, 60, 0.3);
+  border-left: 3px solid #e74c3c;
+  color: #e74c3c;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+  .simulator-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .xinlei-simulator {
+    padding: 16px;
+  }
+  
+  .simulator-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .character-damage-control {
+    flex-wrap: wrap;
+  }
+  
+  .team-setup button {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* スクロールバーのスタイリング */
+.log-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.log-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.log-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.log-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
